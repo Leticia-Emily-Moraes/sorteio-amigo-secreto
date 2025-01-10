@@ -27,3 +27,16 @@ function atualizarLista() {
 		listaHtml.appendChild(li);
 	});
 }
+
+function sortearAmigo() {
+	if (listaDeAmigos.length > 0) {
+		let numAmigo = Math.floor(Math.random() * listaDeAmigos.length);
+		let nomeAmigo = listaDeAmigos[numAmigo];
+		let resultado = document.getElementById("resultado");
+		resultado.innerHTML = `O amigo sorteado foi: ${nomeAmigo}`;
+		listaDeAmigos = [];
+		atualizarLista();
+	} else {
+		alert("Por favor, insira amigos.");
+	}
+}
